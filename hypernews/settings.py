@@ -62,6 +62,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'hypernews.urls'
 
 NEWS_TEMPLATE_PATH = os.path.join(BASE_DIR, 'news/templates/news')
+NEWS_JSON_PATH = os.path.join(BASE_DIR, 'hypernews/news.json')
 
 TEMPLATES = [
     {
