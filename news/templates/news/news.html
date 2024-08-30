@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <h2>Hyper news</h2>
+    {% regroup dates by created|slice:"0:10" as dates_list %}
+        {% for date in dates_list %}
+          <h4>{{ date.grouper }}</h4>
+              <ul>
+              {% for news in date.list %}
+                  <li><a href="/news/{{ news.link }}/">{{ news.title }}</a></li>
+              {% endfor %}
+              </ul>
+        {% endfor %}
+    <a href="/news/create/" target="_blank">Create</a>
+  </body>
+</html>
