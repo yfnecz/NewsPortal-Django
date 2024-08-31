@@ -11,11 +11,14 @@ def index(request):
 
 
 def news(request):
-    date_articles = []
+    articles = []
     with open(settings.NEWS_JSON_PATH, "r") as json_file:
         articles = json.loads(json_file.read())
-        articles = sorted(articles, key=lambda v: v['created'], reverse=True)
-        return render(request, 'news/news.html', {'dates': articles})
+    q = request.GET.get('q')
+    if q:
+        articles = [a for a in articles if q in a['title']]
+    articles = sorted(articles, key=lambda v: v['created'], reverse=True)
+    return render(request, 'news/news.html', {'dates': articles})
 
 
 def article(request, link):
