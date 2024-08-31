@@ -7,7 +7,7 @@ from datetime import datetime
 
 
 def index(request):
-    return render(request, 'news/index.html')
+    return redirect('/news/')
 
 
 def news(request):
@@ -29,11 +29,11 @@ def article(request, link):
 class NewsCreate(View):
 
     @staticmethod
-    def get(self, request, *args, **kwargs):
+    def get(request, *args, **kwargs):
         return render(request, 'news/news_create.html')
 
     @staticmethod
-    def post(self, request, *args, **kwargs):
+    def post(request, *args, **kwargs):
         articles = []
         links_id = 100000
         with open(settings.NEWS_JSON_PATH, "r") as json_file:

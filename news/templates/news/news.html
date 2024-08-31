@@ -1,3 +1,5 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
 <html>
   <body>
     <h2>Hyper news</h2>
@@ -10,6 +12,6 @@
               {% endfor %}
               </ul>
         {% endfor %}
-    <a href="/news/create/" target="_blank">Create</a>
+    <a href="/news/create/">Create</a>
   </body>
 </html>
