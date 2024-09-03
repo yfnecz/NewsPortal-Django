@@ -1,4 +1,6 @@
-Educational Python project for News Portal web application. Uses Django framework & JSON file for data storage.
+Educational Python project for News Portal web application.
+
+Uses Django framework & JSON file for data storage.
 
 To start the web applcation locally:
 
